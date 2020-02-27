@@ -32,7 +32,8 @@ namespace PresenceSimulator
             Application.AddMessageFilter(new MouseMessageFilter());
             MouseMessageFilter.MouseMove += new MouseEventHandler(OnGlobalMouseMove);
 
-            Application.Run(new IamHere());
+            Form f = new IamHere();
+            Application.Run();
         }
 
         private static bool AnInstanceAlreadyRunning()
@@ -41,8 +42,7 @@ namespace PresenceSimulator
             if (Mutex.TryOpenExisting(mutexName, out mtx))
                 return true;
 
-            bool createdNew = false;
-            mtx = new Mutex(true, mutexName, out createdNew);
+            mtx = new Mutex(true, mutexName, out _);
 
             return false;
         }
