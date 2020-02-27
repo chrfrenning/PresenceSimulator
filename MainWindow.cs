@@ -110,6 +110,8 @@ namespace PresenceSimulator
         {
             isQuittingForReal = true;
             Close();
+
+            Application.Exit();
         }
     }
 }
