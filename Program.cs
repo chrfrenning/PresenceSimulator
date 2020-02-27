@@ -33,6 +33,9 @@ namespace PresenceSimulator
             MouseMessageFilter.MouseMove += new MouseEventHandler(OnGlobalMouseMove);
 
             Form f = new IamHere();
+            f.Show();
+            f.Hide();
+
             Application.Run();
         }
 

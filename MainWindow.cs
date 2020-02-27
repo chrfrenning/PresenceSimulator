@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Imaging;
@@ -33,7 +34,8 @@ namespace PresenceSimulator
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            minutesRemaining.Value = DefaultTimerMinutes;
+
+            minutesRemaining.Value = DefaultTimerMinutes = Properties.Settings.Default.DefaultTimeoutMinutes;
             animationImage = pictureBox1.Image;
         }
 
@@ -65,16 +67,20 @@ namespace PresenceSimulator
             {
                 LastMinuteChecked = DateTime.Now.Minute;
                 pictureBox1.Image = animationImage;
+                notifyIcon1.Icon = new Icon(Path.Combine(Application.StartupPath, "mario_star_icon.ico"));
             }
             else
             {
                 //pictureBox1.Image.SelectActiveFrame(new FrameDimension(pictureBox1.Image.FrameDimensionsList[0]), 0);
                 stillImage = pictureBox1.Image.GetThumbnailImage(animationImage.Width, animationImage.Height, null, IntPtr.Zero);
                 pictureBox1.Image = stillImage;
+                notifyIcon1.Icon = new Icon(Path.Combine(Application.StartupPath, "mushroom_icon.ico"));
             }
 
             toolStripEnable.Checked = simulateEnabled.Checked;
             toolStripDisable.Checked = !simulateEnabled.Checked;
+
+
         }
 
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)

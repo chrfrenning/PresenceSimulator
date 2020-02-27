@@ -44,6 +44,7 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripQuit = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripDisable = new System.Windows.Forms.ToolStripMenuItem();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.minutesRemaining)).BeginInit();
@@ -118,6 +119,11 @@
             // minutesRemaining
             // 
             this.minutesRemaining.Location = new System.Drawing.Point(469, 13);
+            this.minutesRemaining.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.minutesRemaining.Name = "minutesRemaining";
             this.minutesRemaining.Size = new System.Drawing.Size(69, 22);
             this.minutesRemaining.TabIndex = 2;
@@ -140,7 +146,7 @@
             this.toolStripSeparator1,
             this.toolStripQuit});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(211, 134);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(138, 114);
             // 
             // toolStripSettings
             // 
@@ -176,6 +182,14 @@
             this.toolStripDisable.Size = new System.Drawing.Size(210, 24);
             this.toolStripDisable.Text = "&Disabled";
             this.toolStripDisable.Click += new System.EventHandler(this.toolStripDisable_Click);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "mario_star_icon.ico");
+            this.imageList1.Images.SetKeyName(1, "mario_shell_icon.ico");
+            this.imageList1.Images.SetKeyName(2, "mushroom_icon.ico");
             // 
             // IamHere
             // 
@@ -217,6 +231,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripDisable;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem toolStripQuit;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }
 
