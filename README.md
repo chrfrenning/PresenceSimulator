@@ -16,3 +16,7 @@ The app fakes a keyboard click of Function Key 24 every 30 minutes.
 * Testing video playing APIs to see if simulated keyboard click mechanism now used can be replaced. Clicks can interrupt other actions if you work while having the simulator enabled.
 
 Must enable feature to control default timeout (now 60m)
+
+## Some info
+
+* Icons from https://www.iconfinder.com/iconsets/supermario
