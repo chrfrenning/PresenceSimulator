@@ -119,5 +119,37 @@ namespace PresenceSimulator
 
             Application.Exit();
         }
+
+        private void toolStripEnable1h_Click(object sender, EventArgs e)
+        {
+            minutesRemaining.Value = 1 * 60;
+
+            if (!simulateEnabled.Checked)
+                simulateEnabled.Checked = true;
+        }
+
+        private void toolStripEnable3h_Click(object sender, EventArgs e)
+        {
+            minutesRemaining.Value = 3 * 60;
+
+            if (!simulateEnabled.Checked)
+                simulateEnabled.Checked = true;
+        }
+
+        private void toolStripEnable12h_Click(object sender, EventArgs e)
+        {
+            minutesRemaining.Value = 12 * 60;
+
+            if (!simulateEnabled.Checked)
+                simulateEnabled.Checked = true;
+        }
+
+        private void toolStrip6hours_Click(object sender, EventArgs e)
+        {
+            minutesRemaining.Value = 6 * 60;
+
+            if (!simulateEnabled.Checked)
+                simulateEnabled.Checked = true;
+        }
     }
 }

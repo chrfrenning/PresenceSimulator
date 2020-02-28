@@ -39,12 +39,16 @@
             this.minutesRemaining = new System.Windows.Forms.NumericUpDown();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolStripSettings = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripEnable = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripDisable = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSettings = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripQuit = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripDisable = new System.Windows.Forms.ToolStripMenuItem();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.toolStripEnable1h = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripEnable3h = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripEnable12h = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStrip6hours = new System.Windows.Forms.ToolStripMenuItem();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.minutesRemaining)).BeginInit();
@@ -146,23 +150,35 @@
             this.toolStripSeparator1,
             this.toolStripQuit});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(138, 114);
-            // 
-            // toolStripSettings
-            // 
-            this.toolStripSettings.Name = "toolStripSettings";
-            this.toolStripSettings.Size = new System.Drawing.Size(210, 24);
-            this.toolStripSettings.Text = "&Settings";
-            this.toolStripSettings.Click += new System.EventHandler(this.toolStripSettings_Click);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(211, 142);
             // 
             // toolStripEnable
             // 
             this.toolStripEnable.Checked = true;
             this.toolStripEnable.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.toolStripEnable.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripEnable1h,
+            this.toolStripEnable3h,
+            this.toolStrip6hours,
+            this.toolStripEnable12h});
             this.toolStripEnable.Name = "toolStripEnable";
-            this.toolStripEnable.Size = new System.Drawing.Size(210, 24);
+            this.toolStripEnable.Size = new System.Drawing.Size(210, 26);
             this.toolStripEnable.Text = "&Enabled";
             this.toolStripEnable.Click += new System.EventHandler(this.toolStripEnable_Click);
+            // 
+            // toolStripDisable
+            // 
+            this.toolStripDisable.Name = "toolStripDisable";
+            this.toolStripDisable.Size = new System.Drawing.Size(210, 26);
+            this.toolStripDisable.Text = "&Disabled";
+            this.toolStripDisable.Click += new System.EventHandler(this.toolStripDisable_Click);
+            // 
+            // toolStripSettings
+            // 
+            this.toolStripSettings.Name = "toolStripSettings";
+            this.toolStripSettings.Size = new System.Drawing.Size(210, 26);
+            this.toolStripSettings.Text = "&Settings";
+            this.toolStripSettings.Click += new System.EventHandler(this.toolStripSettings_Click);
             // 
             // toolStripSeparator1
             // 
@@ -172,16 +188,9 @@
             // toolStripQuit
             // 
             this.toolStripQuit.Name = "toolStripQuit";
-            this.toolStripQuit.Size = new System.Drawing.Size(210, 24);
+            this.toolStripQuit.Size = new System.Drawing.Size(210, 26);
             this.toolStripQuit.Text = "&Quit";
             this.toolStripQuit.Click += new System.EventHandler(this.toolStripQuit_Click);
-            // 
-            // toolStripDisable
-            // 
-            this.toolStripDisable.Name = "toolStripDisable";
-            this.toolStripDisable.Size = new System.Drawing.Size(210, 24);
-            this.toolStripDisable.Text = "&Disabled";
-            this.toolStripDisable.Click += new System.EventHandler(this.toolStripDisable_Click);
             // 
             // imageList1
             // 
@@ -190,6 +199,34 @@
             this.imageList1.Images.SetKeyName(0, "mario_star_icon.ico");
             this.imageList1.Images.SetKeyName(1, "mario_shell_icon.ico");
             this.imageList1.Images.SetKeyName(2, "mushroom_icon.ico");
+            // 
+            // toolStripEnable1h
+            // 
+            this.toolStripEnable1h.Name = "toolStripEnable1h";
+            this.toolStripEnable1h.Size = new System.Drawing.Size(224, 26);
+            this.toolStripEnable1h.Text = "1 hour";
+            this.toolStripEnable1h.Click += new System.EventHandler(this.toolStripEnable1h_Click);
+            // 
+            // toolStripEnable3h
+            // 
+            this.toolStripEnable3h.Name = "toolStripEnable3h";
+            this.toolStripEnable3h.Size = new System.Drawing.Size(224, 26);
+            this.toolStripEnable3h.Text = "3 hours";
+            this.toolStripEnable3h.Click += new System.EventHandler(this.toolStripEnable3h_Click);
+            // 
+            // toolStripEnable12h
+            // 
+            this.toolStripEnable12h.Name = "toolStripEnable12h";
+            this.toolStripEnable12h.Size = new System.Drawing.Size(224, 26);
+            this.toolStripEnable12h.Text = "12 hours";
+            this.toolStripEnable12h.Click += new System.EventHandler(this.toolStripEnable12h_Click);
+            // 
+            // toolStrip6hours
+            // 
+            this.toolStrip6hours.Name = "toolStrip6hours";
+            this.toolStrip6hours.Size = new System.Drawing.Size(224, 26);
+            this.toolStrip6hours.Text = "6 hours";
+            this.toolStrip6hours.Click += new System.EventHandler(this.toolStrip6hours_Click);
             // 
             // IamHere
             // 
@@ -232,6 +269,10 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem toolStripQuit;
         private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripEnable1h;
+        private System.Windows.Forms.ToolStripMenuItem toolStripEnable3h;
+        private System.Windows.Forms.ToolStripMenuItem toolStripEnable12h;
+        private System.Windows.Forms.ToolStripMenuItem toolStrip6hours;
     }
 }
 
