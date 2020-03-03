@@ -74,6 +74,7 @@
     </Compile>
     <Compile Include="KeyboardSend.cs" />
     <Compile Include="MouseMessageFilter.cs" />
+    <Compile Include="PowerMonitorControl.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="MainWindow.resx">
