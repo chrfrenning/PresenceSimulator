@@ -44,12 +44,15 @@
 			this.toolStripEnable3h = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStrip6hours = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripEnable12h = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripEnableIndefinite = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripDisable = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripSimModeKeyPress = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripSimModeVideo = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSettings = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
 			this.toolStripQuit = new System.Windows.Forms.ToolStripMenuItem();
 			this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-			this.toolStripEnableIndefinite = new System.Windows.Forms.ToolStripMenuItem();
 			this.flowLayoutPanel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.minutesRemaining)).BeginInit();
@@ -147,11 +150,12 @@
 			this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripEnable,
             this.toolStripDisable,
+            this.toolStripMenuItem1,
             this.toolStripSettings,
             this.toolStripSeparator1,
             this.toolStripQuit});
 			this.contextMenuStrip1.Name = "contextMenuStrip1";
-			this.contextMenuStrip1.Size = new System.Drawing.Size(211, 142);
+			this.contextMenuStrip1.Size = new System.Drawing.Size(211, 168);
 			// 
 			// toolStripEnable
 			// 
@@ -196,6 +200,13 @@
 			this.toolStripEnable12h.Text = "12 hours";
 			this.toolStripEnable12h.Click += new System.EventHandler(this.toolStripEnable12h_Click);
 			// 
+			// toolStripEnableIndefinite
+			// 
+			this.toolStripEnableIndefinite.Name = "toolStripEnableIndefinite";
+			this.toolStripEnableIndefinite.Size = new System.Drawing.Size(155, 26);
+			this.toolStripEnableIndefinite.Text = "Indefinite";
+			this.toolStripEnableIndefinite.Click += new System.EventHandler(this.toolStripEnableIndefinite_Click);
+			// 
 			// toolStripDisable
 			// 
 			this.toolStripDisable.Name = "toolStripDisable";
@@ -203,11 +214,37 @@
 			this.toolStripDisable.Text = "&Disabled";
 			this.toolStripDisable.Click += new System.EventHandler(this.toolStripDisable_Click);
 			// 
+			// toolStripMenuItem1
+			// 
+			this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripSimModeKeyPress,
+            this.toolStripSimModeVideo});
+			this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+			this.toolStripMenuItem1.Size = new System.Drawing.Size(210, 26);
+			this.toolStripMenuItem1.Text = "Mode";
+			// 
+			// toolStripSimModeKeyPress
+			// 
+			this.toolStripSimModeKeyPress.Name = "toolStripSimModeKeyPress";
+			this.toolStripSimModeKeyPress.Size = new System.Drawing.Size(250, 26);
+			this.toolStripSimModeKeyPress.Text = "Key Press Simulation";
+			this.toolStripSimModeKeyPress.CheckedChanged += new System.EventHandler(this.toolStripSimModeKeyPress_CheckedChanged);
+			// 
+			// toolStripSimModeVideo
+			// 
+			this.toolStripSimModeVideo.Checked = true;
+			this.toolStripSimModeVideo.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.toolStripSimModeVideo.Name = "toolStripSimModeVideo";
+			this.toolStripSimModeVideo.Size = new System.Drawing.Size(250, 26);
+			this.toolStripSimModeVideo.Text = "Video Player Simulation";
+			this.toolStripSimModeVideo.CheckedChanged += new System.EventHandler(this.toolStripSimModeVideo_CheckedChanged);
+			// 
 			// toolStripSettings
 			// 
 			this.toolStripSettings.Name = "toolStripSettings";
 			this.toolStripSettings.Size = new System.Drawing.Size(210, 26);
 			this.toolStripSettings.Text = "&Settings";
+			this.toolStripSettings.Visible = false;
 			this.toolStripSettings.Click += new System.EventHandler(this.toolStripSettings_Click);
 			// 
 			// toolStripSeparator1
@@ -229,13 +266,6 @@
 			this.imageList1.Images.SetKeyName(0, "mario_star_icon.ico");
 			this.imageList1.Images.SetKeyName(1, "mario_shell_icon.ico");
 			this.imageList1.Images.SetKeyName(2, "mushroom_icon.ico");
-			// 
-			// toolStripEnableIndefinite
-			// 
-			this.toolStripEnableIndefinite.Name = "toolStripEnableIndefinite";
-			this.toolStripEnableIndefinite.Size = new System.Drawing.Size(224, 26);
-			this.toolStripEnableIndefinite.Text = "Indefinite";
-			this.toolStripEnableIndefinite.Click += new System.EventHandler(this.toolStripEnableIndefinite_Click);
 			// 
 			// IamHere
 			// 
@@ -268,21 +298,24 @@
         private System.Windows.Forms.RadioButton disabled;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripSettings;
         private System.Windows.Forms.NumericUpDown minutesRemaining;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripEnable;
-        private System.Windows.Forms.ToolStripMenuItem toolStripDisable;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripQuit;
         private System.Windows.Forms.ImageList imageList1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripEnable1h;
-        private System.Windows.Forms.ToolStripMenuItem toolStripEnable3h;
-        private System.Windows.Forms.ToolStripMenuItem toolStripEnable12h;
-        private System.Windows.Forms.ToolStripMenuItem toolStrip6hours;
         private System.Windows.Forms.CheckBox timeoutEnabled;
+		private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+		private System.Windows.Forms.ToolStripMenuItem toolStripEnable;
+		private System.Windows.Forms.ToolStripMenuItem toolStripEnable1h;
+		private System.Windows.Forms.ToolStripMenuItem toolStripEnable3h;
+		private System.Windows.Forms.ToolStripMenuItem toolStrip6hours;
+		private System.Windows.Forms.ToolStripMenuItem toolStripEnable12h;
 		private System.Windows.Forms.ToolStripMenuItem toolStripEnableIndefinite;
+		private System.Windows.Forms.ToolStripMenuItem toolStripDisable;
+		private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+		private System.Windows.Forms.ToolStripMenuItem toolStripQuit;
+		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+		private System.Windows.Forms.ToolStripMenuItem toolStripSimModeKeyPress;
+		private System.Windows.Forms.ToolStripMenuItem toolStripSimModeVideo;
+		private System.Windows.Forms.ToolStripMenuItem toolStripSettings;
 	}
 }
 

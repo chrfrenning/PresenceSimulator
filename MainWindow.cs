@@ -26,7 +26,7 @@ namespace PresenceSimulator
 		Image animationImage;
 		Image stillImage;
 		bool isQuittingForReal = false;
-		public bool simulatorModeKeyboardPress = false; // if true, use keypress, if false use sysExecState
+		public bool simulatorModeKeyboadPress = false; // if true, use keypress, if false use sysExecState
 
         public IamHere()
 		{
@@ -87,7 +87,7 @@ namespace PresenceSimulator
 		{
 			if (simulateEnabled.Checked)
 			{
-				if (simulatorModeKeyboardPress)
+				if (toolStripSimModeKeyPress.Checked)
 				{
 					IntPtr currentWindowSaved = GetForegroundWindow();
 
@@ -117,7 +117,7 @@ namespace PresenceSimulator
 				pictureBox1.Image = animationImage;
 				notifyIcon1.Icon = new Icon(Path.Combine(Application.StartupPath, "mario_star_icon.ico"));
 
-				if (!simulatorModeKeyboardPress)
+				if (toolStripSimModeVideo.Checked)
 				{
 					PowerMonitorControl.KeepSystemAwake();
 				}
@@ -129,7 +129,7 @@ namespace PresenceSimulator
 				pictureBox1.Image = stillImage;
 				notifyIcon1.Icon = new Icon(Path.Combine(Application.StartupPath, "mushroom_icon.ico"));
 
-				if (!simulatorModeKeyboardPress)
+				//if (!simulatorModeKeyboardPress)
 				{
 					PowerMonitorControl.AllowSystemSleep();
 				}
@@ -220,6 +220,18 @@ namespace PresenceSimulator
 		{
 			timeoutEnabled.Checked = false;
 			simulateEnabled.Checked = true;
+		}
+
+		private void toolStripSimModeKeyPress_CheckedChanged(object sender, EventArgs e)
+		{
+			if ( toolStripSimModeKeyPress.Checked )
+				toolStripSimModeVideo.Checked = false;
+		}
+
+		private void toolStripSimModeVideo_CheckedChanged(object sender, EventArgs e)
+		{
+			if ( toolStripSimModeVideo.Checked )
+				toolStripSimModeKeyPress.Checked = false;
 		}
 	}
 }
