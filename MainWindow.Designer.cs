@@ -46,13 +46,14 @@
 			this.toolStripEnable12h = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripEnableIndefinite = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripDisable = new System.Windows.Forms.ToolStripMenuItem();
-			this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMode = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSimModeKeyPress = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSimModeVideo = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSettings = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
 			this.toolStripQuit = new System.Windows.Forms.ToolStripMenuItem();
 			this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+			this.toolTipUpdater = new System.Windows.Forms.Timer(this.components);
 			this.flowLayoutPanel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.minutesRemaining)).BeginInit();
@@ -150,7 +151,7 @@
 			this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripEnable,
             this.toolStripDisable,
-            this.toolStripMenuItem1,
+            this.toolStripMode,
             this.toolStripSettings,
             this.toolStripSeparator1,
             this.toolStripQuit});
@@ -214,14 +215,14 @@
 			this.toolStripDisable.Text = "&Disabled";
 			this.toolStripDisable.Click += new System.EventHandler(this.toolStripDisable_Click);
 			// 
-			// toolStripMenuItem1
+			// toolStripMode
 			// 
-			this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+			this.toolStripMode.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripSimModeKeyPress,
             this.toolStripSimModeVideo});
-			this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-			this.toolStripMenuItem1.Size = new System.Drawing.Size(210, 26);
-			this.toolStripMenuItem1.Text = "Mode";
+			this.toolStripMode.Name = "toolStripMode";
+			this.toolStripMode.Size = new System.Drawing.Size(210, 26);
+			this.toolStripMode.Text = "Mode";
 			// 
 			// toolStripSimModeKeyPress
 			// 
@@ -229,6 +230,7 @@
 			this.toolStripSimModeKeyPress.Size = new System.Drawing.Size(250, 26);
 			this.toolStripSimModeKeyPress.Text = "Key Press Simulation";
 			this.toolStripSimModeKeyPress.CheckedChanged += new System.EventHandler(this.toolStripSimModeKeyPress_CheckedChanged);
+			this.toolStripSimModeKeyPress.Click += new System.EventHandler(this.toolStripSimModeKeyPress_Click);
 			// 
 			// toolStripSimModeVideo
 			// 
@@ -238,6 +240,7 @@
 			this.toolStripSimModeVideo.Size = new System.Drawing.Size(250, 26);
 			this.toolStripSimModeVideo.Text = "Video Player Simulation";
 			this.toolStripSimModeVideo.CheckedChanged += new System.EventHandler(this.toolStripSimModeVideo_CheckedChanged);
+			this.toolStripSimModeVideo.Click += new System.EventHandler(this.toolStripSimModeVideo_Click);
 			// 
 			// toolStripSettings
 			// 
@@ -266,6 +269,12 @@
 			this.imageList1.Images.SetKeyName(0, "mario_star_icon.ico");
 			this.imageList1.Images.SetKeyName(1, "mario_shell_icon.ico");
 			this.imageList1.Images.SetKeyName(2, "mushroom_icon.ico");
+			// 
+			// toolTipUpdater
+			// 
+			this.toolTipUpdater.Enabled = true;
+			this.toolTipUpdater.Interval = 500;
+			this.toolTipUpdater.Tick += new System.EventHandler(this.toolTipUpdater_Tick);
 			// 
 			// IamHere
 			// 
@@ -312,10 +321,11 @@
 		private System.Windows.Forms.ToolStripMenuItem toolStripDisable;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
 		private System.Windows.Forms.ToolStripMenuItem toolStripQuit;
-		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+		private System.Windows.Forms.ToolStripMenuItem toolStripMode;
 		private System.Windows.Forms.ToolStripMenuItem toolStripSimModeKeyPress;
 		private System.Windows.Forms.ToolStripMenuItem toolStripSimModeVideo;
 		private System.Windows.Forms.ToolStripMenuItem toolStripSettings;
+		private System.Windows.Forms.Timer toolTipUpdater;
 	}
 }
 

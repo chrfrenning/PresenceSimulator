@@ -9,6 +9,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -224,14 +225,43 @@ namespace PresenceSimulator
 
 		private void toolStripSimModeKeyPress_CheckedChanged(object sender, EventArgs e)
 		{
-			if ( toolStripSimModeKeyPress.Checked )
-				toolStripSimModeVideo.Checked = false;
 		}
 
 		private void toolStripSimModeVideo_CheckedChanged(object sender, EventArgs e)
 		{
-			if ( toolStripSimModeVideo.Checked )
-				toolStripSimModeKeyPress.Checked = false;
+		}
+
+		private void toolTipUpdater_Tick(object sender, EventArgs e)
+		{
+			if (simulateEnabled.Checked)
+			{
+				string activity = toolStripSimModeVideo.Checked ? "video playing" : "user activity";
+
+				if (!timeoutEnabled.Checked)
+				{
+					notifyIcon1.Text = $"Enabled, simulating {activity}";
+				}
+				else
+				{
+					notifyIcon1.Text = $"Enabled, simulating {activity}, {startedTime.AddMinutes((double)minutesRemaining.Value).Subtract(DateTime.Now).ToString()} remaining.";
+				}
+			}
+			else
+			{
+				notifyIcon1.Text = "Disabled.";
+			}
+		}
+
+		private void toolStripSimModeKeyPress_Click(object sender, EventArgs e)
+		{
+			toolStripSimModeVideo.Checked = false;
+			toolStripSimModeKeyPress.Checked = true;
+		}
+
+		private void toolStripSimModeVideo_Click(object sender, EventArgs e)
+		{
+			toolStripSimModeVideo.Checked = true;
+			toolStripSimModeKeyPress.Checked = false;
 		}
 	}
 }
