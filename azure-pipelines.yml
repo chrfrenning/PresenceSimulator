@@ -37,3 +37,14 @@ steps:
     PathtoPublish: 'bin/release'
     ArtifactName: 'drop'
     publishLocation: 'Container'
+
+- task: GitHubRelease@1
+  inputs:
+    gitHubConnection: 'github.com_chrfrenning'
+    repositoryName: '$(Build.Repository.Name)'
+    action: 'create'
+    target: '$(Build.SourceVersion)'
+    tagSource: 'gitTag'
+    isDraft: true
+    changeLogCompareToRelease: 'lastFullRelease'
+    changeLogType: 'commitBased'
