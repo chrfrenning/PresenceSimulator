@@ -3,7 +3,7 @@ Tired of your computer sleeping too often and instant messaging apps marking you
 
 ### How it does it
 
-The app fakes a keyboard click of Function Key 24 every 30 minutes.
+The app pretends to play video or press F24 at regular intervals.
 
 ## Update, 27 Feb 2020
 
