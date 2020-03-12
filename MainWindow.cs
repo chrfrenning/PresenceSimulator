@@ -180,6 +180,7 @@ namespace PresenceSimulator
 		{
 			timeoutEnabled.Checked = true;
 			minutesRemaining.Value = 1 * 60;
+			startedTime = DateTime.Now;
 
 			if (!simulateEnabled.Checked)
 				simulateEnabled.Checked = true;
@@ -189,6 +190,7 @@ namespace PresenceSimulator
 		{
 			timeoutEnabled.Checked = true;
 			minutesRemaining.Value = 3 * 60;
+			startedTime = DateTime.Now;
 
 			if (!simulateEnabled.Checked)
 				simulateEnabled.Checked = true;
@@ -198,6 +200,7 @@ namespace PresenceSimulator
 		{
 			timeoutEnabled.Checked = true;
 			minutesRemaining.Value = 12 * 60;
+			startedTime = DateTime.Now;
 
 			if (!simulateEnabled.Checked)
 				simulateEnabled.Checked = true;
@@ -207,6 +210,7 @@ namespace PresenceSimulator
 		{
 			timeoutEnabled.Checked = true;
 			minutesRemaining.Value = 6 * 60;
+			startedTime = DateTime.Now;
 
 			if (!simulateEnabled.Checked)
 				simulateEnabled.Checked = true;
@@ -262,6 +266,26 @@ namespace PresenceSimulator
 		{
 			toolStripSimModeVideo.Checked = true;
 			toolStripSimModeKeyPress.Checked = false;
+		}
+
+		private void toolStrip8hours_Click(object sender, EventArgs e)
+		{
+			timeoutEnabled.Checked = true;
+			minutesRemaining.Value = 8 * 60;
+			startedTime = DateTime.Now;
+
+			if (!simulateEnabled.Checked)
+				simulateEnabled.Checked = true;
+		}
+
+		private void toolStrip18hours_Click(object sender, EventArgs e)
+		{
+			timeoutEnabled.Checked = true;
+			minutesRemaining.Value = 18 * 60;
+			startedTime = DateTime.Now;
+
+			if (!simulateEnabled.Checked)
+				simulateEnabled.Checked = true;
 		}
 	}
 }

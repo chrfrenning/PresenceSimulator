@@ -43,6 +43,7 @@
 			this.toolStripEnable1h = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripEnable3h = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStrip6hours = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStrip8hours = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripEnable12h = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripEnableIndefinite = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripDisable = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,6 +55,7 @@
 			this.toolStripQuit = new System.Windows.Forms.ToolStripMenuItem();
 			this.imageList1 = new System.Windows.Forms.ImageList(this.components);
 			this.toolTipUpdater = new System.Windows.Forms.Timer(this.components);
+			this.toolStrip18hours = new System.Windows.Forms.ToolStripMenuItem();
 			this.flowLayoutPanel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.minutesRemaining)).BeginInit();
@@ -166,7 +168,9 @@
             this.toolStripEnable1h,
             this.toolStripEnable3h,
             this.toolStrip6hours,
+            this.toolStrip8hours,
             this.toolStripEnable12h,
+            this.toolStrip18hours,
             this.toolStripEnableIndefinite});
 			this.toolStripEnable.Name = "toolStripEnable";
 			this.toolStripEnable.Size = new System.Drawing.Size(210, 26);
@@ -176,35 +180,42 @@
 			// toolStripEnable1h
 			// 
 			this.toolStripEnable1h.Name = "toolStripEnable1h";
-			this.toolStripEnable1h.Size = new System.Drawing.Size(155, 26);
+			this.toolStripEnable1h.Size = new System.Drawing.Size(224, 26);
 			this.toolStripEnable1h.Text = "1 hour";
 			this.toolStripEnable1h.Click += new System.EventHandler(this.toolStripEnable1h_Click);
 			// 
 			// toolStripEnable3h
 			// 
 			this.toolStripEnable3h.Name = "toolStripEnable3h";
-			this.toolStripEnable3h.Size = new System.Drawing.Size(155, 26);
+			this.toolStripEnable3h.Size = new System.Drawing.Size(224, 26);
 			this.toolStripEnable3h.Text = "3 hours";
 			this.toolStripEnable3h.Click += new System.EventHandler(this.toolStripEnable3h_Click);
 			// 
 			// toolStrip6hours
 			// 
 			this.toolStrip6hours.Name = "toolStrip6hours";
-			this.toolStrip6hours.Size = new System.Drawing.Size(155, 26);
+			this.toolStrip6hours.Size = new System.Drawing.Size(224, 26);
 			this.toolStrip6hours.Text = "6 hours";
 			this.toolStrip6hours.Click += new System.EventHandler(this.toolStrip6hours_Click);
+			// 
+			// toolStrip8hours
+			// 
+			this.toolStrip8hours.Name = "toolStrip8hours";
+			this.toolStrip8hours.Size = new System.Drawing.Size(224, 26);
+			this.toolStrip8hours.Text = "8 hours";
+			this.toolStrip8hours.Click += new System.EventHandler(this.toolStrip8hours_Click);
 			// 
 			// toolStripEnable12h
 			// 
 			this.toolStripEnable12h.Name = "toolStripEnable12h";
-			this.toolStripEnable12h.Size = new System.Drawing.Size(155, 26);
+			this.toolStripEnable12h.Size = new System.Drawing.Size(224, 26);
 			this.toolStripEnable12h.Text = "12 hours";
 			this.toolStripEnable12h.Click += new System.EventHandler(this.toolStripEnable12h_Click);
 			// 
 			// toolStripEnableIndefinite
 			// 
 			this.toolStripEnableIndefinite.Name = "toolStripEnableIndefinite";
-			this.toolStripEnableIndefinite.Size = new System.Drawing.Size(155, 26);
+			this.toolStripEnableIndefinite.Size = new System.Drawing.Size(224, 26);
 			this.toolStripEnableIndefinite.Text = "Indefinite";
 			this.toolStripEnableIndefinite.Click += new System.EventHandler(this.toolStripEnableIndefinite_Click);
 			// 
@@ -276,6 +287,13 @@
 			this.toolTipUpdater.Interval = 500;
 			this.toolTipUpdater.Tick += new System.EventHandler(this.toolTipUpdater_Tick);
 			// 
+			// toolStrip18hours
+			// 
+			this.toolStrip18hours.Name = "toolStrip18hours";
+			this.toolStrip18hours.Size = new System.Drawing.Size(224, 26);
+			this.toolStrip18hours.Text = "18 hours";
+			this.toolStrip18hours.Click += new System.EventHandler(this.toolStrip18hours_Click);
+			// 
 			// IamHere
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -326,6 +344,8 @@
 		private System.Windows.Forms.ToolStripMenuItem toolStripSimModeVideo;
 		private System.Windows.Forms.ToolStripMenuItem toolStripSettings;
 		private System.Windows.Forms.Timer toolTipUpdater;
+		private System.Windows.Forms.ToolStripMenuItem toolStrip8hours;
+		private System.Windows.Forms.ToolStripMenuItem toolStrip18hours;
 	}
 }
 
