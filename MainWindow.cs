@@ -142,7 +142,7 @@ namespace PresenceSimulator
 
 		private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
 		{
-
+			simulateEnabled.Checked = !simulateEnabled.Checked;
 		}
 
 		private void IamHere_FormClosing(object sender, FormClosingEventArgs e)
@@ -286,6 +286,10 @@ namespace PresenceSimulator
 
 			if (!simulateEnabled.Checked)
 				simulateEnabled.Checked = true;
+		}
+
+		private void notifyIcon1_Click(object sender, EventArgs e)
+		{
 		}
 	}
 }
